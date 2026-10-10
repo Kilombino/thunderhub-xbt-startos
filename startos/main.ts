@@ -1,9 +1,14 @@
-import { gRPCHostId, gRPCPort } from 'lnd-startos/startos/interfaces'
-import { manifest as lndManifest } from 'lnd-startos/startos/manifest'
 import { accountsYaml, defaultAccount } from './fileModels/accounts.yaml'
 import { i18n } from './i18n'
 import { sdk } from './sdk'
-import { accountsPath, dataDir, lndMount, uiPort } from './utils'
+import {
+  accountsPath,
+  dataDir,
+  lfGRPCHostId,
+  lfGRPCPort,
+  lndMount,
+  uiPort,
+} from './utils'
 
 export const main = sdk.setupMain(async ({ effects }) => {
   /**
@@ -20,8 +25,8 @@ export const main = sdk.setupMain(async ({ effects }) => {
       mountpoint: dataDir,
       readonly: false,
     })
-    .mountDependency<typeof lndManifest>({
-      dependencyId: 'lnd',
+    .mountDependency({
+      dependencyId: 'lightning-fork',
       volumeId: 'main',
       subpath: null,
       mountpoint: lndMount,
@@ -44,9 +49,9 @@ export const main = sdk.setupMain(async ({ effects }) => {
   // ThunderHub reconfigures instead of dialing a stale port.
   const grpcHost = await sdk.host
     .getBridgeAddress(effects, {
-      packageId: 'lnd',
-      hostId: gRPCHostId,
-      internalPort: gRPCPort,
+      packageId: 'lightning-fork',
+      hostId: lfGRPCHostId,
+      internalPort: lfGRPCPort,
     })
     .const()
 

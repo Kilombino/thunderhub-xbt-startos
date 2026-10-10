@@ -1,8 +1,7 @@
 {
-  "name": "thunderhub-startos",
+  "name": "thunderhub-xbt-startos",
   "dependencies": {
-    "@start9labs/start-sdk": "3.0.3",
-    "lnd-startos": "github:Start9Labs/lnd-startos#next"
+    "@start9labs/start-sdk": "3.0.3"
   },
   "overrides": {
     "@start9labs/start-sdk": "$@start9labs/start-sdk"

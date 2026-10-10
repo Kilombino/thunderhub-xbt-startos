@@ -10,7 +10,7 @@ const certificatePath = `${lndMount}/tls.cert` as const
 // main.ts when LND's binding is available. It stays absent until then rather
 // than holding a fabricated address, so ThunderHub never dials a dead port.
 export const defaultAccount = {
-  name: 'LND Node',
+  name: 'Lightning Fork',
   macaroonPath,
   certificatePath,
 } as const

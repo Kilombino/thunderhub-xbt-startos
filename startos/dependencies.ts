@@ -1,15 +1,18 @@
 import { depLndDescription } from './manifest/i18n'
 import { sdk } from './sdk'
 
-const lnd = sdk.Dependency.required('lnd', {
+// Lightning Fork: LND for the Bitcoin BLAKE2b chain, packaged by paulscode
+// (github.com/paulscode/lightning-fork-startos). The official LND package follows the SHA-256
+// chain and is not a substitute.
+const lightningFork = sdk.Dependency.required('lightning-fork', {
   description: depLndDescription,
   metadata: {
-    title: 'LND',
-    icon: 'https://raw.githubusercontent.com/Start9Labs/lnd-startos/refs/heads/master/icon.svg',
+    title: 'Lightning Fork',
+    icon: 'https://raw.githubusercontent.com/paulscode/lightning-fork-startos/master/icon.png',
   },
-  versionRange: '>=0.21.1-beta:4',
+  versionRange: '>=0.21.4-beta.18:0',
   kind: 'running',
   healthChecks: ['lnd'],
 })
 
-export const dependencies = sdk.Dependencies.of().addDependency(lnd)
+export const dependencies = sdk.Dependencies.of().addDependency(lightningFork)
