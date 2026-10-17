@@ -16,7 +16,7 @@ export const manifest = setupManifest({
       // ThunderHub forked for the Bitcoin BLAKE2b chain (XBT): BTCB2 prices from Neoxa, the
       // chain's own explorer and fee rates, no Amboss. Built from the xbt branch of
       // github.com/Kilombino/thunderhub.
-      source: { dockerTag: 'ghcr.io/kilombino/thunderhub-xbt:0.19.0-xbt.1' },
+      source: { dockerTag: 'ghcr.io/kilombino/thunderhub-xbt:0.19.0-xbt.2' },
       arch: ['x86_64', 'aarch64'],
       emulateMissing: false,
     },
