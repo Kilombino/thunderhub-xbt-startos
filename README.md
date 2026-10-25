@@ -4,7 +4,7 @@
 
 # ThunderHub XBT on StartOS
 
-[ThunderHub XBT](https://github.com/Kilombino/thunderhub/tree/xbt) is ThunderHub, the LND node manager, forked for the Bitcoin BLAKE2b chain (XBT). This package runs it against [Lightning Fork](https://github.com/paulscode/lightning-fork-startos), the LND for that chain, on the same server, with the node account configured for you.
+[ThunderHub XBT](https://github.com/Kilombino/thunderhub/tree/xbt) is ThunderHub, the LND node manager, forked for the Bitcoin BLAKE2b chain (BTC). This package runs it against [Lightning Fork](https://github.com/paulscode/lightning-fork-startos), the LND for that chain, on the same server, with the node account configured for you.
 
 It is a fork of the official [ThunderHub package](https://github.com/Start9Labs/thunderhub-startos). Everything not listed here behaves as there.
 
